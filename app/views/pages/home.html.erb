@@ -5,10 +5,27 @@
     height: 300px;
     perspective: 1000px;
     cursor: pointer;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
   }
 
   .education-card {
     height: 145px;
+  }
+
+  .work-card {
+    height: 140px;
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .work-grid .col-6 {
+    width: 100%;
   }
 
   .flip-card-inner {
@@ -30,12 +47,13 @@
     backface-visibility: hidden;
     border-radius: 8px;
     overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, 0.18);
   }
 
   .flip-card-front img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: scale-down;
   }
 
   .flip-card-back {
@@ -51,7 +69,7 @@
 <section class="py-5 text-center bg-dark text-white" style="margin-top: 56px;">
   <div class="container">
     <h1 class="display-4 fw-bold">Keval Eric Sheth</h1>
-    <p class="lead">Your Title Here · Your City, State</p>
+    <p class="lead">Human · Chicago, Illinois</p>
     <a href="#contact" class="btn btn-outline-light mt-3">Get In Touch</a>
   </div>
 </section>
@@ -67,7 +85,7 @@
         <div class="flip-card w-100" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <%= image_tag "about-placeholder.svg", alt: "About Me" %>
+              <%= image_tag "Keval-Headshot.jpeg", alt: "About Me" %>
             </div>
             <div class="flip-card-back">
               <h4>Hi, I'm Keval!</h4>
@@ -80,59 +98,55 @@
       <!-- Work Experience Column -->
       <div class="col-4">
         <h2 class="fw-bold border-bottom pb-2 mb-4">Work Experience</h2>
-        <div class="row g-2">
+        <div class="row g-2 work-grid">
           <div class="col-6">
-            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card work-card" onclick="this.classList.toggle('flipped')">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
-                  <%= image_tag "work-placeholder.svg", alt: "Company 1" %>
+                  <%= image_tag "Chase-Logo.svg", alt: "Company 1" %>
                 </div>
                 <div class="flip-card-back">
-                  <h6>Job Title</h6>
-                  <p class="text-white-50 small">Company · Start – End</p>
-                  <p class="small">Description of your role.</p>
+                  <h6>Product Manager</h6>
+                  <p class="text-white-50 small">JP Morgan Chase · Current</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-6">
-            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card work-card" onclick="this.classList.toggle('flipped')">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
-                  <%= image_tag "work-placeholder.svg", alt: "Company 2" %>
+                  <%= image_tag "Accenture-logo.png", alt: "Company 2" %>
                 </div>
                 <div class="flip-card-back">
-                  <h6>Job Title</h6>
-                  <p class="text-white-50 small">Company · Start – End</p>
-                  <p class="small">Description of your role.</p>
+                  <h6>Data Strategy Consultant</h6>
+                  <p class="text-white-50 small">Accenture · 2019 – 2023</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-6">
-            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card work-card" onclick="this.classList.toggle('flipped')">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
-                  <%= image_tag "work-placeholder.svg", alt: "Company 3" %>
+                  <%= image_tag "Cardinal.png", alt: "Company 3" %>
                 </div>
                 <div class="flip-card-back">
-                  <h6>Job Title</h6>
-                  <p class="text-white-50 small">Company · Start – End</p>
-                  <p class="small">Description of your role.</p>
+                  <h6>Intern</h6>
+                  <p class="text-white-50 small">Cardinal Health · Summer 2018</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-6">
-            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card work-card" onclick="this.classList.toggle('flipped')">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
-                  <%= image_tag "work-placeholder.svg", alt: "Company 4" %>
+                  <%= image_tag "Reynolds.png", alt: "Company 4" %>
                 </div>
                 <div class="flip-card-back">
-                  <h6>Job Title</h6>
-                  <p class="text-white-50 small">Company · Start – End</p>
-                  <p class="small">Description of your role.</p>
+                  <h6>Intern</h6>
+                  <p class="text-white-50 small">Reynolds American · Summer 2017</p>
                 </div>
               </div>
             </div>
@@ -148,12 +162,12 @@
             <div class="flip-card education-card" onclick="this.classList.toggle('flipped')">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
-                  <%= image_tag "MBA.jpeg", alt: "School 1" %>
+                  <%= image_tag asset_path("KelloggMBA.jpg"), alt: "School 1" %>
                 </div>
                 <div class="flip-card-back">
-                  <h6>Degree Name</h6>
-                  <p class="text-white-50 small">University Name · Year</p>
-                  <p class="small">What you studied, achievements, activities.</p>
+                  <h6>Masters Degree</h6>
+                  <p class="text-white-50 small">Kellogg School of Management · 2026</p>
+                  <p class="small">Major(s): Finance & Marketing</p>
                 </div>
               </div>
             </div>
@@ -162,12 +176,13 @@
             <div class="flip-card education-card" onclick="this.classList.toggle('flipped')">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
-                  <%= image_tag "education-placeholder.svg", alt: "School 2" %>
+                 <img src="https://logos-world.net/wp-content/uploads/2021/09/The-Ohio-State-University-Logo.png" alt="School 2">
+
                 </div>
                 <div class="flip-card-back">
-                  <h6>Degree Name</h6>
-                  <p class="text-white-50 small">University Name · Year</p>
-                  <p class="small">What you studied, achievements, activities.</p>
+                  <h6>Bachelor's Degree</h6>
+                  <p class="text-white-50 small">THE Ohio State University · 2019</p>
+                  <p class="small">Major: Management Information Systems.</p>
                 </div>
               </div>
             </div>
