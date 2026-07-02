@@ -422,26 +422,7 @@
       <button class="project-carousel-nav" type="button" data-project-carousel-prev aria-label="Show previous project">←</button>
       <div class="project-carousel-viewport">
         <div class="project-carousel-track" data-project-carousel-track>
-          <div class="project-card">
-            <a href="https://example.com/" target="_blank" rel="noopener noreferrer" class="project-card-link">
-              <div class="project-card-image" style="padding: 0; background: none; overflow: hidden;">
-                <%= image_tag "App Icon Option 1.png", alt: "Group Poop", style: "width: 100%; height: 100%; object-fit: cover; object-position: center;" %>
-              </div>
-              <div class="project-card-content">
-                <h5 class="fw-bold">Group Poop</h5>
-                <p class="mb-0">A second project snapshot with a short description, goals, and a link to the live site or repository.</p>
-              </div>
-            </a>
-          </div>
-          <div class="project-card">
-            <a href="https://example.com/" target="_blank" rel="noopener noreferrer" class="project-card-link">
-              <div class="project-card-image">Upload image</div>
-              <div class="project-card-content">
-                <h5 class="fw-bold">Project One</h5>
-                <p class="mb-0">Most collegiate apparel is mass produced — same shirt, same print, same feeling every fall Saturday. [Brand Name] does it differently. We design thoughtful, limited-print collegiate gear in small batches, so what you wear actually feels like yours. Built with high-quality materials and construction meant to last. And it doesn't stop at the product: a portion of every sale is donated directly to your alma mater's NIL fund, to maintain a winning tradition.</p>
-              </div>
-            </a>
-          </div>
+
           <div class="project-card">
             <a href="https://example.com/" target="_blank" rel="noopener noreferrer" class="project-card-link">
               <div class="project-card-image" style="padding: 0; background: none; overflow: hidden;">
@@ -453,6 +434,31 @@
               </div>
             </a>
           </div>
+
+
+          <div class="project-card">
+            <a href="https://example.com/" target="_blank" rel="noopener noreferrer" class="project-card-link">
+              <div class="project-card-image" style="padding: 0; background: none; overflow: hidden;">
+                <%= image_tag "App Icon Option 1.png", alt: "Group Poop", style: "width: 100%; height: 100%; object-fit: cover; object-position: center;" %>
+              </div>
+              <div class="project-card-content">
+                <h5 class="fw-bold">Group Poop</h5>
+                <p class="mb-0">A social platform to track your bowel movements and compete with friends!</p>
+              </div>
+            </a>
+          </div>
+
+          
+          <div class="project-card">
+            <a href="https://example.com/" target="_blank" rel="noopener noreferrer" class="project-card-link">
+              <div class="project-card-image">Upload image</div>
+              <div class="project-card-content">
+                <h5 class="fw-bold">Project One</h5>
+                <p class="mb-0">Most collegiate apparel is mass produced — same shirt, same print, same feeling every fall Saturday. [Brand Name] does it differently. We design thoughtful, limited-print collegiate gear in small batches, so what you wear actually feels like yours. Built with high-quality materials and construction meant to last. And it doesn't stop at the product: a portion of every sale is donated directly to your alma mater's NIL fund, to maintain a winning tradition.</p>
+              </div>
+            </a>
+          </div>
+
         </div>
       </div>
       <button class="project-carousel-nav" type="button" data-project-carousel-next aria-label="Show next project">→</button>
@@ -498,7 +504,7 @@
           autoplayTimer = setInterval(function () {
             currentIndex = (currentIndex + 1) % cards.length;
             updateCarousel();
-          }, 5000);
+          }, 9000);
         }
 
         prevButton.addEventListener('click', function () {
