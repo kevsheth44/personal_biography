@@ -184,6 +184,143 @@
     background: #111827;
   }
 
+  .bento-section {
+    background: #f3f1f9;
+  }
+
+  .bento-section-title {
+    border-bottom: 1px solid #DDD9EA;
+    padding-bottom: 0.55rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .bento-grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr;
+  }
+
+  .bento-tile {
+    min-height: 100px;
+    background: #ffffff;
+    border: 1px solid #DDD9EA;
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .bento-tile:hover {
+    transform: translateY(-3px);
+    border-color: #cfc8de;
+  }
+
+  .bento-tile-icon {
+    color: #534AB7;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .bento-tile-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #1f1a32;
+  }
+
+  .bento-tile-note {
+    margin: 6px 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #6b6885;
+  }
+
+  .bento-tile-featured {
+    background: #2D2560;
+    border: none;
+    color: #ffffff;
+  }
+
+  .bento-tile-featured .bento-tile-icon {
+    color: #CECBF6;
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  .bento-tile-featured .bento-tile-title {
+    color: #ffffff;
+  }
+
+  .bento-tile-featured .bento-tile-note {
+    color: #AFA9EC;
+  }
+
+  @media (min-width: 992px) {
+    .bento-grid {
+      grid-template-columns: 1.5fr 1fr 1fr;
+      grid-auto-rows: minmax(120px, auto);
+    }
+
+    .bento-grid .bento-tile:first-child {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+    }
+
+    .bento-grid .bento-tile:nth-child(2) {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .bento-grid .bento-tile:nth-child(3) {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .bento-grid .bento-tile:nth-child(4) {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .bento-grid .bento-tile:nth-child(5) {
+      grid-column: 3;
+      grid-row: 2;
+    }
+
+    .bento-grid .bento-tile:last-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .bento-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bento-grid .bento-tile:first-child {
+      grid-column: 1 / -1;
+      grid-row: auto;
+    }
+
+    .bento-grid .bento-tile:last-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .bento-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .bento-grid .bento-tile:first-child,
+    .bento-grid .bento-tile:last-child {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
+
   #about,
   #interests,
   #projects,
@@ -404,10 +541,44 @@
 </script>
 
 <!-- Interests Section -->
-<section id="interests" class="py-5 bg-light">
+<section id="interests" class="py-5 bento-section">
   <div class="container">
-    <h2 class="fw-bold border-bottom pb-2">Interests</h2>
-    <p class="mt-3">Write about your hobbies and interests here.</p>
+    <h2 class="fw-bold pb-2 bento-section-title"><em>Interests <span class = "fw-light">I could talk about all day long ...</em></span></h2>
+  
+
+    <div class="bento-grid" aria-label="Interests bento grid">
+      <article class="bento-tile bento-tile-featured">
+        <i class="bi bi-hammer bento-tile-icon" aria-hidden="true"></i>
+        <h3 class="bento-tile-title">*Specific* Manual Labor</h3>
+        <p class="bento-tile-note">Hands on weekend projects with my dad are the most rewarding</p>
+      </article>
+
+      <article class="bento-tile">
+        <i class="bi bi-book bento-tile-icon" aria-hidden="true"></i>
+        <h3 class="bento-tile-title">Non-Fiction Reading</h3>
+      </article>
+
+      <article class="bento-tile">
+        <i class="bi bi-activity bento-tile-icon" aria-hidden="true"></i>
+        <h3 class="bento-tile-title">Fitness</h3>
+        <p class="bento-tile-note">Any activity, any time. Favorites: lifting, biking, & golf</p>
+      </article>
+
+      <article class="bento-tile">
+        <i class="bi bi-trophy bento-tile-icon" aria-hidden="true"></i>
+        <h3 class="bento-tile-title">Cincinnati Sports Fandom</h3>
+      </article>
+
+      <article class="bento-tile">
+        <i class="bi bi-cash-coin bento-tile-icon" aria-hidden="true"></i>
+        <h3 class="bento-tile-title">Personal Finance</h3>
+      </article>
+
+      <article class="bento-tile">
+        <i class="bi bi-lightbulb bento-tile-icon" aria-hidden="true"></i>
+        <h3 class="bento-tile-title">Entrepreneurship</h3>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -430,7 +601,7 @@
               </div>
               <div class="project-card-content">
                 <h5 class="fw-bold">Personal Website</h5>
-                <p class="mb-0">A pet project to practice what I preach: I scoped, designed, coded, and shipped this site myself — because the best PMs stay close to the build.</p>
+                <p class="mb-0">A pet project to practice what I preach: I scoped, designed, coded, and shipped this site myself. Love being intricately involved in the build.</p>
               </div>
             </a>
           </div>
